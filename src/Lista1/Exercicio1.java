@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 //Fa̧ca um algoritmo que receba quatro números, calcule e mostre a soma destes números.
 
-public class Exercicio1 {
+public class Lista1_1 {
     public static void main(String [] args){
         Scanner teclado = new Scanner(System.in);
         int primeiroNumero, segundoNumero, terceiroNumero, quartoNumero;
