@@ -1,6 +1,8 @@
+package Lista1;
+
 import java.util.Scanner;
 
-public class Lista1_6 {
+public class Exercicio6 {
     public static void main(String [] args){
         Scanner teclado = new Scanner(System.in);
         int numeroTabuada;

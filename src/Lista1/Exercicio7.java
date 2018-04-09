@@ -1,6 +1,8 @@
+package Lista1;
+
 import java.util.Scanner;
 
-public class Lista1_7 {
+public class Exercicio7 {
     public static void main(String [] args){
         Scanner teclado = new Scanner(System.in);
         float angulo1, angulo2, angulo3;

@@ -1,6 +1,8 @@
+package Lista1;
+
 import java.util.Scanner;
 
-public class Lista1_8 {
+public class Exercicio8 {
     public static void main(String [] args){
         Scanner teclado = new Scanner(System.in);
         float diagonaMaior, diagonalMenor, area;

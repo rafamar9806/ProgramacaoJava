@@ -1,3 +1,5 @@
+package Uri;
+
 import java.util.Scanner;
 public class Uri_1009 {
     public static void main(String [] args){

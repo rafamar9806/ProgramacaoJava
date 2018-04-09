@@ -1,8 +1,10 @@
+package Lista1;
+
 import java.util.Scanner;
 
 import static java.lang.System.*;
 
-public class Lista1_2 {
+public class Exercicio2 {
     public static void main(String [] args){
         Scanner teclado = new Scanner(in);
         float num1, num2, num3;

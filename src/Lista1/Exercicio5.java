@@ -1,6 +1,8 @@
+package Lista1;
+
 import java.util.Scanner;
 
-public class Lista1_5 {
+public class Exercicio5 {
     public static void main(String [] args){
         Scanner tecalado = new Scanner(System.in);
         double salario, percentualAumento;
