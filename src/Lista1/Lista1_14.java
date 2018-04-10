@@ -4,7 +4,7 @@ public class Lista1_14 {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        double salarioBase, salarioLiquido, salario, imposto;
+        double salarioBase, salarioLiquido, salario, imposto, resultado;
         int horasTrabalhadas;
 
         System.out.println("Digite seu saslário base");
@@ -13,20 +13,14 @@ public class Lista1_14 {
         System.out.println("a quantidade de horas trabalhadas");
         horasTrabalhadas = teclado.nextInt();
 
-        imposto = (salarioBase/100)*7;
-        salario = imposto-(salarioBase/2);
-        System.out.println(imposto);
-        System.out.println(salario);
-        salarioLiquido = salario*horasTrabalhadas;
+        salario = (salarioBase/2); //Recebe o sálario base e divide por 2
+        resultado = (salario*7)/100; // Calcula 7% sob o salario base recebido
+        imposto = salario-resultado; // desconta 7% sob o salario base
+        
+        salarioLiquido = (imposto*horasTrabalhadas); //multiplica o novo salario base por a quantidade de horas trabalhadas
 
-        System.out.println("Seu salário líquido considerando o imposto será: "+salarioLiquido);
-
-
-
-
-
-
-
+        System.out.println("Seu salário líquido considerando o imposto será: "+salarioLiquido); //imprime o salario liquido com os descontos
+        
 
     }
 }
