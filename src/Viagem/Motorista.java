@@ -1,3 +1,5 @@
+package Viagem;
+
 public class Motorista{
 	private String nome;
 	private String cpf;

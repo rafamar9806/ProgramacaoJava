@@ -1,3 +1,5 @@
+package Viagem;
+
 public class Viagem{
 	private Passageiro passageiro;
 	private Motorista motorista;
@@ -5,10 +7,12 @@ public class Viagem{
 	private String destino;
 	private double precoCorrida;
 
-	public Viagem(Passageiro passageiro, Motorista motorista){
-		passageiro = new Passageiro();
-		
-	}
+    public Viagem(Passageiro passageiro, Motorista motorista) {
+        this.passageiro = passageiro;
+        this.motorista = motorista;
+    }
+
+	
 
 	public String getNomePassageiro(){
 		return passageiro.getNome();
@@ -16,11 +20,13 @@ public class Viagem{
 	}
 
 	public String getNomeMotorista(){
+            return null;
 		
 
 	}
 
 	public String getPlacaCarro(){
+            return null;
 
 
 	}
