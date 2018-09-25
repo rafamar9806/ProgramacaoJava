@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CrescenteDecrescente{
+public class Uri_1113{
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TabuadaUri1078{
+public class Uri_1078{
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 

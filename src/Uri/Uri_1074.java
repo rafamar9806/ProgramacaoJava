@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class Uri_1074 {
 
     public static void main(String[] args) {
 

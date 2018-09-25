@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MaiorEPosicao {
+public class Uri_1080 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 
