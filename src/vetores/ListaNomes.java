@@ -2,23 +2,19 @@ import java.util.*;
 
 public class ListaNomes{
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         ArrayList<String> nomes = new ArrayList<>();
 
-        nomes.add("Rafael");
-        nomes.add("Daniele");
-        nomes.add("Edivaldo");
-        nomes.add("Maria");
-
-        Collections.sort(nomes);
-
-        System.out.println(nomes.size());
-
-        nomes.remove(index);
-        for (String var : nomes) {
-            System.out.println(var);
-            
-        }
-
+       for (int i = 0; i < 5; i++) {
+        String nome = input.nextLine();
+        nomes.add(nome);
+           
+       }
+       Collections.sort(nomes);
+       System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-");
+       for (String var : nomes) {
+           System.out.println(var);
+       }
         
     }
 }
