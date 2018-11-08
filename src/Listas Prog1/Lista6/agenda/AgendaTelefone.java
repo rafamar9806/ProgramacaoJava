@@ -1,4 +1,3 @@
-package agenda;
 
 public class AgendaTelefone {
 
