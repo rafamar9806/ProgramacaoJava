@@ -1,8 +1,10 @@
 public class Trabalho {
-    private int trabalhos;
+    private double trabalhos;
 
-    public void setProvas(int trabalhos) {
+    public void setTrabalhos(double trabalhos) {
         this.trabalhos = trabalhos;
     }
-    public 
+    public double getTrabalhos(){
+    	return this.trabalhos;
+    }
 }

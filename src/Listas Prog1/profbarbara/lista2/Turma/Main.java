@@ -6,6 +6,10 @@ public class Main {
 
         Turma turma = new Turma();
 
+        System.out.println("Informe a quantidade de alunos");
+        int numAlunoss = input.nextInt();
+        turma.numAlunos(numAlunoss);
+
         System.out.println("1 - Adicionar Alunos");
         System.out.println("2 - Imprimir alunos");
         System.out.println("3 - Numero de alunos reprovados");
@@ -18,10 +22,6 @@ public class Main {
             switch (select) {
 
             case 1:
-                System.out.println("Quantidade de alunos");
-                int qtd = input.nextInt();
-                input.nextLine();
-
                 System.out.println("Nome Aluno");
                 String nome = input.nextLine();
                 System.out.println("RGA");
@@ -29,7 +29,7 @@ public class Main {
                 System.out.println("Idade");
                 String idade = input.nextLine();
 
-                turma.addAlunos(qtd, nome, rga, idade);
+                turma.addAlunos(nome, rga, idade);
 
                 System.out.println("1 - Adicionar Alunos");
                 System.out.println("2 - Imprimir alunos");
