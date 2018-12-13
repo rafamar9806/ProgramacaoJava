@@ -21,39 +21,19 @@ public class Agenda {
                 visualizarLista();
                 break;
             case 2:
-                visualizarContato(solicitaNome());
+                visualizarContato();
                 break;
             case 3:
-                System.out.println("Nome");
-                String n = teclado.nextLine();
-
-                System.out.println("Sobrenome");
-                String sn = teclado.nextLine();
-
-                System.out.println("Telefone");
-                String tel = teclado.nextLine();
-                adicionar(n, sn, tel);
+                adicionar();
                 break;
             case 4:
-                System.out.println("Nome");
-                String n1 = teclado.nextLine();
-
-                System.out.println("Sobrenome");
-                String sn1 = teclado.nextLine();
-
-                remover(n1, sn1);
+                remover();
                 break;
+
             case 5:
-                Contato r = new Contato();
-                r = buscaContatoPorNome();
-                System.out.println("Nome Novo");
-                String nomeNovo = teclado.nextLine();
-                System.out.println("Sobrenome Novo");
-                String sobrenomeNovo = teclado.nextLine();
-                System.out.println("telefone Novo");
-                String telefoneNovo = teclado.nextLine();
-                editarContato(r, nomeNovo, sobrenomeNovo, telefoneNovo);
+                editarContato();
                 break;
+
             case 0:
                 System.out.println("Saindo!");
                 break;
@@ -80,14 +60,21 @@ public class Agenda {
         return Integer.parseInt(escolha);
     }
 
-    public void adicionar(String nome, String sobrenome, String telefone) {
-        Contato cont = new Contato(nome, sobrenome, telefone);
+    public void adicionar() {
+        System.out.println("Nome");
+        String nome = teclado.nextLine();
 
-        if (numContatos < contato.length) {
-            if (contato[numContatos] == null) {
-                contato[numContatos] = cont;
-                ++numContatos;
-            }
+        System.out.println("Sobrenome");
+        String sobrenome = teclado.nextLine();
+
+        System.out.println("Telefone");
+        String telefone = teclado.nextLine();
+
+        if (Contato.getNumDeContatos() >= 500) {
+            System.out.println("Agenda Cheia!");
+        } else {
+            contato[Contato.getNumDeContatos()] = new Contato(nome, sobrenome, telefone);
+            System.out.println("Contato Adicionado!");
         }
 
     }
@@ -99,81 +86,156 @@ public class Agenda {
     }
 
     public Contato buscaContatoPorNome() {
-        System.out.println("Nome Antigo");
-        String nomeAntigo = teclado.nextLine();
-        System.out.println("Sobrenome Antigo");
-        String sobrenomeAntigo = teclado.nextLine();
-        System.out.println("telefone Antigo");
-        String telefoneAntigo = teclado.nextLine();
-
-        Contato na = new Contato(nomeAntigo, sobrenomeAntigo, telefoneAntigo);
-        for (int i = 0; i < contato.length; i++) {
+        String nomeBuscado = solicitaNome();
+        for (int i = 0; i < Contato.getNumDeContatos(); i++) {
             if (contato[i] != null) {
-                if (contato[i].getNome().equals(na.getNome())) {
-                    if (contato[i].getSobrenome().equals(na.getSobrenome())) {
-                        if (contato[i].getTelefone().equals(na.getTelefone())) {
-                            return contato[i];
-                        }
-                    }
+                if (nomeBuscado.equals(contato[i].getNome())) {
+                    return contato[i];
                 }
             }
         }
-
         return null;
     }
 
-    public void visualizarContato(String n) {
-        for (int i = 0; i < contato.length; i++) {
-            if (contato[i] != null) {
-                if (n.equals(contato[i].getNome())) {
-                    contato[i].imprimeListaContatos();
-                }
-            }
-        }
+    public void visualizarContato() {
+        System.out.println("-------------------------");
+        Contato.imprimeListaContatos(buscaContatoPorNome());
+        System.out.println();
+        System.out.println("-------------------------");
 
     }
 
     public void visualizarLista() {
-        for (int i = 0; i < contato.length; i++) {
+        System.out.println("-------------------------");
+        System.out.printf("Contatos na Agenda: %d/500\n", Contato.getNumDeContatos());
+        for (int i = 0; i < Contato.getNumDeContatos(); i++) {
             if (contato[i] != null) {
+                System.out.print((i + 1) + " - ");
                 contato[i].imprimeListaContatos();
             }
         }
+        System.out.println();
+        System.out.println("-------------------------");
+
     }
 
-    public void remover(String n1, String sn1) {
+    public void remover() {
+        int quantidadeContatos = Contato.getNumDeContatos();
+        System.out.println("Nome");
+        String n1 = teclado.nextLine();
+
+        System.out.println("Sobrenome");
+        String sn1 = teclado.nextLine();
+
         for (int i = 0; i < contato.length; i++) {
             if (contato[i] != null) {
 
                 if (n1.equals(contato[i].getNome())) {
                     if (sn1.equals(contato[i].getSobrenome())) {
                         contato[i] = null;
+                        Contato.setNumDeContatos(quantidadeContatos - 1);
+
                     }
                 }
             }
         }
+        for (int i = 0; i < contato.length - 1; ++i) {
+            if (contato[i] == null) {
+                contato[i] = contato[i + 1];
+                contato[i + 1] = null;
+            }
+        }
+
     }
 
-    public void editarContato(Contato a, String nomeNovo, String sobrenomeNovo, String telefoneNovo) {
+    public void editarContato() {
+        visualizarLista();
+        System.out.println("Digite o número referente ao contato que voce deseja editar");
+        int numEscolha = teclado.nextInt();
+        teclado.nextLine();// limpando buffer
+        System.out.println("Voce escolheu");
+        Contato.imprimeListaContatos(contato[numEscolha - 1]);
 
-        Contato e = new Contato(nomeNovo, sobrenomeNovo, telefoneNovo);
+        System.out.println("1 - Editar Nome");
+        System.out.println("2 - Editar Sobrenome");
+        System.out.println("3 - Editar Telefone");
+        System.out.println("4 - Imprimir Contato");
+        System.out.println("0 - Sair");
 
-        for (int i = 0; i < contato.length; i++) {
-            if (contato[i] != null) {
-                if (a.getNome().equals(contato[i].getNome())) {
-                    if (a.getSobrenome().equals(contato[i].getSobrenome())) {
-                        if (a.getTelefone().equals(contato[i].getTelefone())) {
-                            contato[i] = e;
-                        } else {
-                            System.out.println("Telefone não está na lista");
-                        }
-                    } else {
-                        System.out.println("Sobrenome não está na lista");
-                    }
-                } else {
-                    System.out.println("Nome não está na Lista");
-                }
+        int escolhaEditar = teclado.nextInt();
+        teclado.nextLine();
+
+        do {
+            switch (escolhaEditar) {
+            case 1:
+                System.out.println("Novo Nome");
+                String nome = teclado.nextLine();
+                contato[numEscolha-1].setNome(nome);
+                System.out.println("1 - Editar Nome");
+                System.out.println("2 - Editar Sobrenome");
+                System.out.println("3 - Editar Telefone");
+                System.out.println("4 - Imprimir Contato");
+                System.out.println("0 - Sair");
+                escolhaEditar = teclado.nextInt();
+                teclado.nextLine();
+
+                break;
+            case 2:
+                System.out.println("Novo Sobrenome");
+                String sobrenome = teclado.nextLine();
+                contato[numEscolha-1].setSobrenome(sobrenome);
+                System.out.println("1 - Editar Nome");
+                System.out.println("2 - Editar Sobrenome");
+                System.out.println("3 - Editar Telefone");
+                System.out.println("4 - Imprimir Contato");
+                System.out.println("0 - Sair");
+                escolhaEditar = teclado.nextInt();
+                teclado.nextLine();
+
+                break;
+            case 3:
+                System.out.println("Novo Telefone");
+                String telefone = teclado.nextLine();
+                contato[numEscolha-1].setTelefone(telefone);
+                System.out.println("1 - Editar Nome");
+                System.out.println("2 - Editar Sobrenome");
+                System.out.println("3 - Editar Telefone");
+                System.out.println("4 - Imprimir Contato");
+                System.out.println("0 - Sair");
+                escolhaEditar = teclado.nextInt();
+                teclado.nextLine();
+
+                break;
+            case 4:
+                Contato.imprimeListaContatos(contato[numEscolha - 1]);
+                System.out.println("1 - Editar Nome");
+                System.out.println("2 - Editar Sobrenome");
+                System.out.println("3 - Editar Telefone");
+                System.out.println("4 - Imprimir Contato");
+                System.out.println("0 - Sair");
+                escolhaEditar = teclado.nextInt();
+                teclado.nextLine();
+
+                break;
+            case 0:
+                System.out.println("Saindo...");
+
+                break;
+
+            default:
+                System.out.println("Opção inválida");
+                System.out.println("1 - Editar Nome");
+                System.out.println("2 - Editar Sobrenome");
+                System.out.println("3 - Editar Telefone");
+                System.out.println("4 - Imprimir Contato");
+                System.out.println("0 - Sair");
+                escolhaEditar = teclado.nextInt();
+                teclado.nextLine();
+
+                break;
             }
-        }
+
+        } while (escolhaEditar != 0);
+
     }
 }

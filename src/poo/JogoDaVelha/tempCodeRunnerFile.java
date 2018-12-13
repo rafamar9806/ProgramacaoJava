@@ -1,2 +1,2 @@
-dor = 0;
-        Jogador jogador1;
+
+		boolean vitoriaX=false,

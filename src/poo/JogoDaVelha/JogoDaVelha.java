@@ -16,6 +16,7 @@ public class JogoDaVelha {
 
 		do{
 			//Faz a jogada do primeiro jogador, considerando o método para usuário humano
+			System.out.println("Vez do Jogador " + jogador1.getId());
 			jogador1.jogada(tabuleiro,menu.lerLinha(), menu.lerColuna());
 			//contabiliza a jogada com sucesso, visto que os métodos já garantem que a jogada sempre acontecerá com sucesso
 			contador++;
@@ -27,6 +28,7 @@ public class JogoDaVelha {
 			//Caso ngm tenha vencido ainda e não tenha acabado as jogadas, o segundo jogador joga.
 			if(vitoriaX == false && vitoriaO == false && contador < 9){
 				//Faz a jogada do primeiro jogador, considerando o método para usuário computador
+				System.out.println("Vez do Jogador " + jogador2.getId());
 				jogador2.jogada(tabuleiro);
 				//contabiliza a jogada com sucesso, visto que os métodos já garantem que a jogada sempre acontecerá com sucesso
 				contador++;
