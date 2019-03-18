@@ -11,7 +11,31 @@ public class Uri_1038 {
         quantidade = teclado.nextInt();
         teclado.nextLine();
 
-        if (codigo == 1){
+        switch(codigo){
+            case 1:
+            valor = (float) (4.0*quantidade);
+            System.out.printf("Total: R$ %.2f\n", valor );
+            break;
+            case 2:
+            valor = (float) (4.50 * quantidade);
+            System.out.printf("Total: R$ %.2f\n", valor);
+            break;
+            case 3:
+            valor = (float) (5.0 * quantidade);
+            System.out.printf("Total: R$ %.2f\n", valor);
+            break;
+            case 4:
+            valor = (float) (2.0 * quantidade);
+            System.out.printf("Total: R$ %.2f\n",valor);
+            break;
+            case 5:
+            valor = (float) (1.50 * quantidade);
+            System.out.printf("Total: R$ %.2f\n",valor);
+            break;
+
+        }
+
+        /*if (codigo == 1){
             valor = (float) (4.0*quantidade);
             System.out.printf("Total: R$ %.2f\n", valor );
         }
@@ -30,6 +54,6 @@ public class Uri_1038 {
         else if (codigo == 5) {
             valor = (float) (1.50 * quantidade);
             System.out.printf("Total: R$ %.2f\n",valor);
-        }
+        }*/
     }
 }
