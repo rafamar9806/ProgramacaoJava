@@ -20,5 +20,4 @@ public class Exercicio1 {
 
         System.out.println("A soma desses quatro numeros é\n" +soma);
 
-    }
-}
+     }

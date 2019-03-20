@@ -1,17 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Uri;
-
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import java.util.Scanner;
 
-/**
- *
- * @author skynet
- */
 public class Uri_1045 {
     public static void main(String[] args) {
         

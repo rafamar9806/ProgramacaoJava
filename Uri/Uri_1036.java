@@ -1,43 +1,25 @@
 import java.util.Scanner;
 
-public class Uri_1036{
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+public class Uri_1036 {
 
-		double a,b,c;
-		a = input.nextDouble();
-		b = input.nextDouble();
-		c = input.nextDouble();
+ public static void main(String[] args) {
+  double A, B, C, R1, R2;
+  Scanner input =new Scanner(System.in);
+  A = input.nextDouble();
+  B = input.nextDouble();
+  C = input.nextDouble();
+  
+  if ((A == 0) || (((B*B) -(4*A*C)) < 0)) {
+   System.out.print("Impossivel calcular\n");
+  }else {
+   R1 = ((-B + Math.sqrt(((B*B) -(4*A*C)))) / (2*A));
+   R2 = ((-B - Math.sqrt(((B*B) -(4*A*C)))) / (2*A));
+   
+   System.out.printf("R1 = %.5f\n", R1);
+   System.out.printf("R2 = %.5f\n", R2);
+  }
+  
+  
+ }
 
-		double delta1 = Math.pow(b,2);
-		double delta2 = (4 * a *c);
-
-		double delta = delta1 - delta2;
-		System.out.println("delta " + delta);
-
-		if (delta == 0) {
-			System.out.println("Impossivel calcular");
-		}else{
-			double xpositivo =  Math.sqrt(delta);
-			double bd = - b;
-			xpositivo =  xpositivo + bd;
-			System.out.println("xpositivo " + xpositivo);
-
-			double xnegativo =  Math.sqrt(delta);
-			double bds = - b;
-			xnegativo =  xnegativo - bds;
-			System.out.println("xnegativo " + xnegativo);
-
-		}
- 
-		/*if (a == 0) {
-			System.out.println("Impossivel calcular");
-		}
-		else{
-			double raiz = Math.pow()
-		}
-			*/
-		
-
-	}
 }
