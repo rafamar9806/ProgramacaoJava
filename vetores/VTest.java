@@ -11,7 +11,7 @@ public class VTest{
 		v.preencheVetor(e);
 		x.preencheVetor(f);
 
-
+ter
 
 		v.print();
 		x.print();
