@@ -1,17 +1,33 @@
+import java.util.Scanner;
+
 //Vetor Orientado a Objetos
 // Rafael Silva Martins
 // Rga: 2018.1907.075-1
 
 public class Vetor {
+<<<<<<< HEAD
+	public static int[] v;
+	public static int n;
+=======
 	public int[] v;
 	public int n;
+	Scanner input;
+>>>>>>> classePrincipal
 
-	public Vetor(int n) {
+	public Vetor(int n) { // recebe o tamanho do vetor quando instancia o objeto
 		this.n = n;
 		v = new int[this.n]; // inicia vetor
+		input = new Scanner(System.in);//instanciando objeto da classe Scanner para ler dados do digitados pelo usuario
+
 	}
 
-	public int find(int buscado) {
+	public void addVetor(){
+		for (int i = 0; i < v.length; i++) {
+			v[i] = input.nextInt();
+		}
+	}
+
+	public static int find(int buscado) {
 		int encontrado = -1;
 
 		for (int i = 0; i < v.length; i++) {
@@ -22,7 +38,7 @@ public class Vetor {
 		return encontrado;
 	}
 
-	public void replace(int buscado, int substituto) {
+	public static void replace(int buscado, int substituto) {
 		for (int i = 0; i < v.length; i++) {
 			if (v[i] == buscado) {
 				v[i] = substituto;
@@ -30,7 +46,7 @@ public class Vetor {
 		}
 	}
 
-	public void swap(int a, int b) {
+	public static void swap(int a, int b) {
 		int aux = 0;
 		if (a >= 0 && a < v.length && a >= 0 && a < v.length) {
 			aux = v[a];
@@ -41,7 +57,7 @@ public class Vetor {
 		}
 	}
 
-	public void replaceAll(int buscado, int substituto) {
+	public static void replaceAll(int buscado, int substituto) {
 		for (int i = 0; i < v.length; i++) {
 			if (v[i] == buscado) {
 				v[i] = substituto;
@@ -49,7 +65,7 @@ public class Vetor {
 		}
 	}
 
-	public void invert() {
+	public static void invert() {
 		int aux = 0;
 		int i = 0;
 		int j = v.length - 1;
@@ -65,14 +81,14 @@ public class Vetor {
 
 	}
 
-	public void print() {
+	public static void print() {
 		for (int i = 0; i < v.length; i++) {
 			System.out.print(v[i] + " ");
 		}
 		System.out.println();
 	}
 
-	public int produtoEscalar(int[] u) {
+	public static int produtoEscalar(int[] u) {
 		int pEscalar = 0;
 		int somaV = 0;
 		int somaU = 0;
@@ -86,7 +102,7 @@ public class Vetor {
 		return pEscalar;
 	}
 
-	public int produtoEscalarVetor(Vetor u) {
+	public static int produtoEscalarVetor(Vetor u) {
 		int pEscalar = 0;
 		int somaV = 0;
 		int somaU = 0;
@@ -100,7 +116,7 @@ public class Vetor {
 		return pEscalar;
 	}
 
-	public void sort() {
+	public static void sort() {
 		int aux = 0;
 		boolean c;
 		for (int i = 0; i < v.length; i++) {
