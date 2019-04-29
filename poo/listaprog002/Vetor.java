@@ -5,7 +5,7 @@ import java.util.Scanner;
 // Rga: 2018.1907.075-1
 
 public class Vetor {
-	public int[] v;
+	public Item[] v;
 	public int n;
 	Scanner input;
 
@@ -82,34 +82,6 @@ public class Vetor {
 			System.out.print(v[i] + " ");
 		}
 		System.out.println();
-	}
-
-	public static int produtoEscalar(int[] u) {
-		int pEscalar = 0;
-		int somaV = 0;
-		int somaU = 0;
-
-		for (int w = 0; w < v.length; w++) {
-			somaV += v[w];
-			somaU += u[w];
-
-		}
-		pEscalar = somaV + somaU;
-		return pEscalar;
-	}
-
-	public static int produtoEscalarVetor(Vetor u) {
-		int pEscalar = 0;
-		int somaV = 0;
-		int somaU = 0;
-
-		for (int w = 0; w < v.length; w++) {
-			somaV += u.v[w];
-			somaU += v[w];
-
-		}
-		pEscalar = somaV + somaU;
-		return pEscalar;
 	}
 
 	public static void sort() {
