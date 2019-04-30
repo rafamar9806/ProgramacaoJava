@@ -1,104 +1,165 @@
-import java.util.Scanner;
-
-//Vetor Orientado a Objetos
-// Rafael Silva Martins
-// Rga: 2018.1907.075-1
 
 public class Vetor {
-	public Item[] v;
-	public int n;
-	Scanner input;
-
+	private Item[] itens;
+	private Item[] itensIguais;
+	private int n;
 
 	public Vetor(int n) { // recebe o tamanho do vetor quando instancia o objeto
 		this.n = n;
-		v = new int[this.n]; // inicia vetor
-		input = new Scanner(System.in);//instanciando objeto da classe Scanner para ler dados do digitados pelo usuario
+		itens = new Item[this.n]; // inicia vetor
+		itensIguais = new Item[this.n];
 
 	}
 
-	public void addVetor(){
-		for (int i = 0; i < v.length; i++) {
-			v[i] = input.nextInt();
-		}
-	}
+	public void print() {
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				System.out.println("Nome: " + itens[i].getNome() + " " + "Preco: " + itens[i].getPreco() + " Id: "
+						+ itens[i].getId());
 
-	public static int find(int buscado) {
-		int encontrado = -1;
-
-		for (int i = 0; i < v.length; i++) {
-			if (v[i] == buscado) {
-				encontrado = i;
 			}
-		}
-		return encontrado;
-	}
-
-	public static void replace(int buscado, int substituto) {
-		for (int i = 0; i < v.length; i++) {
-			if (v[i] == buscado) {
-				v[i] = substituto;
-			}
-		}
-	}
-
-	public static void swap(int a, int b) {
-		int aux = 0;
-		if (a >= 0 && a < v.length && a >= 0 && a < v.length) {
-			aux = v[a];
-			v[a] = v[b];
-			v[b] = aux;
-		} else {
-			System.out.println("Posicao Inválida");
-		}
-	}
-
-	public static void replaceAll(int buscado, int substituto) {
-		for (int i = 0; i < v.length; i++) {
-			if (v[i] == buscado) {
-				v[i] = substituto;
-			}
-		}
-	}
-
-	public static void invert() {
-		int aux = 0;
-		int i = 0;
-		int j = v.length - 1;
-
-		while (i <= j) {
-			aux = v[i];
-			v[i] = v[j];
-			v[j] = aux;
-
-			i++;
-			j--;
-		}
-
-	}
-
-	public static void print() {
-		for (int i = 0; i < v.length; i++) {
-			System.out.print(v[i] + " ");
 		}
 		System.out.println();
 	}
 
-	public static void sort() {
-		int aux = 0;
-		boolean c;
-		for (int i = 0; i < v.length; i++) {
-			for (int j = 0; j < v.length - 1; j++) {
-				if (v[j] > v[j + 1]) {
-					aux = v[j];
-					v[j] = v[j + 1];
-					v[j + 1] = aux;
+	public void inserir(Item item) {
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] == null) {
+				itens[i] = item;
+				break;
+			}
+		}
 
+	}
+
+	public void inserir(String nome, double preco) {
+		Item item = new Item(nome, preco);
+		inserir(item);
+
+	}
+
+	public void remover(Item itemRemover) {
+		int posicaoEncontrada = -1;
+
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				if (itens[i].compara(itemRemover)) {
+					System.out.println("p " + i);
+					posicaoEncontrada = i;
+				}
+
+			}
+		}
+		if (posicaoEncontrada >= 0) {
+			itens[posicaoEncontrada] = null;
+		} else {
+			System.out.println("Item não Encontrado");
+		}
+
+	}
+
+	public void remover(int id) {
+		int posicaoEncontrada = -1;
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				if (itens[i].getId() == id) {
+					posicaoEncontrada = i;
+				}
+
+			}
+		}
+		if (posicaoEncontrada >= 0) {
+			itens[posicaoEncontrada] = null;
+		} else {
+			System.out.println("Item não Encontrado");
+		}
+
+	}
+
+	public Item procuraItem(int id) {
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				if (itens[i].getId() == id) {
+					return itens[i];
+				}
+
+			}
+		}
+		return null;
+	}
+
+	public Item procuraItem(String nome) {
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				if (itens[i].compara(nome)) {
+					return itens[i];
+				}
+
+			}
+		}
+		return null;
+	}
+
+	public void ornedaAlfabeticamente() {
+		Item aux = null;
+
+		for (int i = 0; i < Item.getNumObjetos(); i++) {
+			for (int j = i + 1; j < Item.getNumObjetos(); j++) {
+				if (itens[i].getNome().compareTo(itens[j].getNome()) > 0) {
+					aux = itens[i];
+					itens[i] = itens[j];
+					itens[j] = aux;
 				}
 
 			}
 
 		}
+	}
+
+	public void ordenaPorPreco() {
+		Item aux = null;
+
+		for (int i = 0; i < Item.getNumObjetos(); i++) {
+			for (int j = i + 1; j < Item.getNumObjetos(); j++) {
+				if (itens[i].getPreco() > itens[j].getPreco()) {
+					aux = itens[i];
+					itens[i] = itens[j];
+					itens[j] = aux;
+				}
+
+			}
+
+		}
+
+	}
+
+	public Item[] procuraIguais(String nome) {
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] != null) {
+				if (itens[i].getNome().equals(nome)) {
+					itensIguais[i] = itens[i];
+				}
+
+			}
+		}
+
+		return itensIguais;
+	}
+
+	public void imprimeIguais() {
+		System.out.println("Vetor de itens iguais");
+		for (int i = 0; i < itensIguais.length; i++) {
+			if (itensIguais[i] != null) {
+				System.out.println("Nome: " + itensIguais[i].getNome() + " " + "Preco: " + itensIguais[i].getPreco()
+						+ " Id: " + itensIguais[i].getId());
+
+			}
+		}
+		System.out.println();
+	}
+
+	public static int itensEmEstoque() {
+		return Item.getNumObjetos();
 	}
 
 }
