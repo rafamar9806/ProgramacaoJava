@@ -12,14 +12,10 @@ public class EstoqueTest {
         estoque1.inserir(item4);
         estoque1.inserir(item5);
 
-       estoque1.itensEmEstoque();
 
         estoque1.imprime();
         System.out.println("---------");
 
-
-        estoque1.procuraIguais("abacate");
-        estoque1.imprimeIguais();
 
 
 

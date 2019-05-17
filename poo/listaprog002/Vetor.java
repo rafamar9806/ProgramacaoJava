@@ -1,5 +1,5 @@
 
-public class Vetor {
+public class Vetor{
 	private Item[] itens;
 	private Item[] itensIguais;
 	private int n;
@@ -14,8 +14,8 @@ public class Vetor {
 	public void print() {
 		for (int i = 0; i < itens.length; i++) {
 			if (itens[i] != null) {
-				System.out.println("Nome: " + itens[i].getNome() + " " + "Preco: " + itens[i].getPreco() + " Id: "
-						+ itens[i].getId());
+				System.out.println(Item.imprimirItens(itens[i]));
+				
 
 			}
 		}

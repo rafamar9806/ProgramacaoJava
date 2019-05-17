@@ -10,6 +10,10 @@ public class Item {
 		this.preco = preco;
 		numObjetos++;
 	}
+	public static String imprimirItens(Item item){
+		String imprimir = String.format("Nome: %s Preço: %f ID: %d", item.getNome(), item.getPreco(), item.getId());
+		return imprimir;
+	}
 
 	public static int getNumObjetos() {
 		return numObjetos;
