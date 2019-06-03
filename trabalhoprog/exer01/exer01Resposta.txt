@@ -1,0 +1,2 @@
+new é uma palavra reservada no java que invoca o construtor da classe, alocando memória para o objeto
+e retorna um ponteiro para quem a chamou.

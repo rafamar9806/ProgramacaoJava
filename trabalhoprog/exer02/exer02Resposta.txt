@@ -1,0 +1,11 @@
+O que é um construtor padrão?
+
+    - Se você não fornecer nenhuma declaração de construtor em uma classe, o compilador cria um construtor
+    padrão que não recebe nenhum argumento quando é invocado.
+
+Como os atributos de um objeto são inicializadas se
+uma classe tiver somente um construtor padrão?
+
+    - o construtor padrão inicializa as variáveis de instâncuia com os valores iniciais especificados
+    nas suas declarações ou com seus valores padrão(zero para tipos numéricos primitivos, false para valores boolean
+    e null para referências).

@@ -1,0 +1,17 @@
+Método ->
+
+Um método é uma sub-rotina, um bloco de código que pertence a uma classe, e tem por finalidade realizar uma tarefa e/ou corresponder a uma ação do objeto. Esse código é executado por um objeto ao receber uma mensagem, e determina seu comportamento, sendo análogo às funções e procedimentos da programação estruturada (similar às funções em C e sub-rotinas em Pascal).
+
+Uma vez que os métodos representam ações, eles são geralmente identificados por verbos. No exemplo de uma classe que representa um Animal, possíveis métodos seriam “comer()”, “correr()”, “dormir()”. A utilidade dos métodos é evitar cópias desnecessárias de código, bastando invocar os métodos quando desejado. Além disso, é possível reaproveitar o código das classes e agilizar a implementação do sistema final.
+
+Classe ->
+
+Conjunto de elementos com determinadas características. Uma classe pode ser entendida como um “esqueleto” que descreve as características (atributos) e comportamentos (métodos) dos elementos que compõem um sistema.
+    •	Classe é a descrição geral (implementação) de um objeto, com atributos e métodos;
+
+Objeto -> 
+
+Os objetos podem representar conceitos tanto reais (carro, animal, barco, etc.) quanto abstratos (conta poupança, funcionário, pessoa física, etc).
+Os objetos, portanto, modelam conceitos reais ou abstratos. Em um sistema podemos ter diversos objetos que se relacionam. Cada objeto pode ser replicado em diversas “cópias” que representam as instâncias daquele objeto. Por exemplo: o carro 1, o carro 2 e o carro 3, que são instâncias do objeto carro.
+
+
