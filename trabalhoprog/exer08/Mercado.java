@@ -7,6 +7,18 @@ public class Mercado{
 		estoque.addProduto(13, 3, "Arroz");
 		estoque.addProduto(2.0, 40, "Sal");
 
-		estoque.imprimirEstoque();
+
+		Pedido pedido1 = new Pedido();
+		pedido1.fazerPedido("Trigo", 10);
+		pedido1.fazerPedido("Arroz", 10);
+		pedido1.imprimirPedido();
+		pedido1.pagarConta(15);
+
+		System.out.println("----");
+
+		pedido1.imprimirPedido();
+
+
+
 	}
 }

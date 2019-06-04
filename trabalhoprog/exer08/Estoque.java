@@ -1,8 +1,12 @@
 public class Estoque{
-	Produto [] itens;
+	private static Produto [] itens;
 
 	public Estoque(int tmnEstoque){
 		itens = new Produto[tmnEstoque];
+	}
+
+	public Estoque(){
+
 	}
 
 	public void addProduto(double preco, int qtdEstoque, String produtoNome){
@@ -14,13 +18,17 @@ public class Estoque{
 			itens[Produto.getNumProdutos()] = item;
 		}
 
-		for (int i = 0;i < itens.length ;i++ ) {
-			if (itens[i]==null) {
-				itens[i] = item;
+	}
 
+	public static Produto procurarProduto(String produto){
+		for (int i = 0;i < itens.length ;i++ ) {
+			if (itens[i]!=null) {
+				if (itens[i].getProduto().equals(produto)) {
+					return itens[i];
+				}
 			}
-			break;
 		}
+		return null;
 	}
 
 	public void imprimirEstoque(){
