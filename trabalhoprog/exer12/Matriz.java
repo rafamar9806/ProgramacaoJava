@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/*
+implementamos as letras B,C,D
+*/
+
 public class Matriz {
     private static int[][] m;
     private Scanner input = new Scanner(System.in);
@@ -7,8 +11,9 @@ public class Matriz {
     public Matriz(int linha, int coluna) {
         this.m = new int[linha][coluna];
     }
-
-    // A
+    public Matriz(int [][] matriz) {//construtor sobrecarregado
+        this.m = matriz;
+    }
 
     // B
     public static int[][] transposta(Matriz objMatriz) {
@@ -57,22 +62,6 @@ public class Matriz {
 
         return m;
 
-    }
-
-    // J
-
-    public static int[][] somarMatrizes(int[][] m1, int[][] m2) {
-
-        int[][] soma = m1;
-
-        for (int i = 0; i < soma.length; i++) {
-            for (int j = 0; j < soma[i].length; j++) {
-                soma[i][j] = m1[i][j] + m2[i][j];
-            }
-
-        }
-
-        return soma;
     }
 
     public static int qtdLinhas(int[][] mLinha) {
