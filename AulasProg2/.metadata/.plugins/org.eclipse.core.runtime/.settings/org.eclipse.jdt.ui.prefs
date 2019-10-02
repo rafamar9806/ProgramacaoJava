@@ -1,5 +1,5 @@
 content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.mylyn.java.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="aula40.Turma"><rhs name\="aula40.Turma"/></lhs><lhs name\="aula40.ColecaoTurmas"><rhs name\="aula40.ColecaoTurmas"/></lhs><lhs name\="exer50.Tempo"><rhs name\="exer50.Tempo"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="aula40.Turma"><rhs name\="aula40.Turma"/></lhs><lhs name\="aula40.ColecaoTurmas"><rhs name\="aula40.ColecaoTurmas"/></lhs><lhs name\="exer50.Tempo"><rhs name\="exer50.Tempo"/></lhs><lhs name\="exer55replit.Aluno"><rhs name\="exer55replit.Aluno"/></lhs><lhs name\="exer56replit.Aluno"><rhs name\="exer56replit.Aluno"/></lhs></history>
 content_assist_number_of_computers=24
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
